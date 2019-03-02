@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    
+    
+    <bean id ="myTeacher"
+    	class ="com.cesarscode.springdemo.ScienceTeacher">
+    </bean>
+    
+    <bean id = "myScienceTeacher"
+    	class = "com.cesarscode.springdemo.ScienceTeacher">
+    	  	
+    	<!-- Setter Injection -->
+    	<!--  invokes setTip(TipService tip) Method in ScienceTeacher.class -->
+    	<property name = "tip" ref = "myTipService"/>
+    </bean>
+    
+    <bean id = "myMathTeacher"
+    	class = "com.cesarscode.springdemo.MathTeacher">
+    	
+    	<property name = "tip" ref = "myTipService"/>
+    </bean>
+    
+    <bean id ="myTipService"
+    	class = "com.cesarscode.springdemo.ClassTip">
+    </bean>
+    
+    
+    
+</beans>
+
+
+
+
+
